@@ -37,7 +37,7 @@ export function HeroSlideContent({
       <div className="absolute inset-0 bg-black/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/75" />
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pb-28 pt-24 text-center text-white">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-14 pb-28 pt-24 text-center text-white sm:px-16">
         <h1 className="max-w-4xl text-4xl font-bold uppercase leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           {heading}
         </h1>

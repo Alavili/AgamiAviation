@@ -3,7 +3,10 @@ import {
   type HeroCarouselSlide,
 } from "../components/sections/HeroCarousel";
 import { AboutTeaser } from "../components/sections/AboutTeaser";
+import { SolutionShowcase } from "../components/sections/SolutionShowcase";
+import { ProductAccordion } from "../components/sections/ProductAccordion";
 import { homeContent } from "../content/home";
+import { products, productsIntro } from "../content/products";
 
 // "Hire. Purchase. Service." renders as words joined by orange dots, matching
 // the Figma hero. Only the Home hero's first slide needs this treatment.
@@ -54,6 +57,8 @@ export default function HomePage() {
         content={homeContent.aboutTeaser}
         locations={homeContent.locations}
       />
+      <SolutionShowcase content={homeContent.solutionShowcase} />
+      <ProductAccordion intro={productsIntro} products={products} />
     </>
   );
 }
