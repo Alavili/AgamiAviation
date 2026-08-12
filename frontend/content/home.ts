@@ -33,6 +33,17 @@ export interface HomeContent {
     // Position of the map pin, as a percentage of the map graphic's width/height.
     position: { xPercent: number; yPercent: number };
   }>;
+  solutionShowcase: {
+    heading: string; // PENDING_CLIENT_CONTENT
+    subhead: string; // PENDING_CLIENT_CONTENT
+    items: Array<{
+      title: string; // PENDING_CLIENT_CONTENT
+      description: string; // PENDING_CLIENT_CONTENT
+      image: string; // PENDING_CLIENT_CONTENT
+      imageAlt: string; // PENDING_CLIENT_CONTENT
+      href: string;
+    }>;
+  };
   pullQuote: {
     quote: string; // PENDING_CLIENT_CONTENT
     attribution: string; // PENDING_CLIENT_CONTENT
@@ -126,6 +137,48 @@ export const homeContent: HomeContent = {
       position: { xPercent: 63, yPercent: 51 },
     },
   ],
+  solutionShowcase: {
+    heading: "Our Solution", // PENDING_CLIENT_CONTENT
+    subhead: "Lorem ipsum dolor sit amet Lorem ipsum.", // PENDING_CLIENT_CONTENT — Figma itself uses lorem ipsum here, real copy not yet provided
+    items: [
+      {
+        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        description:
+          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
+        href: "/solutions",
+      },
+      {
+        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        description:
+          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
+        href: "/solutions",
+      },
+      {
+        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        description:
+          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
+        href: "/solutions",
+      },
+      {
+        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        description:
+          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
+        href: "/solutions",
+      },
+    ],
+  },
   pullQuote: {
     quote: "", // PENDING_CLIENT_CONTENT
     attribution: "", // PENDING_CLIENT_CONTENT
