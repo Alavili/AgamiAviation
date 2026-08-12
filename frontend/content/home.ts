@@ -48,11 +48,28 @@ export interface HomeContent {
     quote: string; // PENDING_CLIENT_CONTENT
     attribution: string; // PENDING_CLIENT_CONTENT
   };
-  testimonials: Array<{
-    quote: string; // PENDING_CLIENT_CONTENT
-    author: string; // PENDING_CLIENT_CONTENT
-    role: string; // PENDING_CLIENT_CONTENT
-  }>;
+  portfolio: {
+    heading: string; // PENDING_CLIENT_CONTENT
+    subhead: string; // PENDING_CLIENT_CONTENT
+    items: Array<{
+      eyebrow: string; // PENDING_CLIENT_CONTENT
+      title: string; // PENDING_CLIENT_CONTENT
+      image: string; // PENDING_CLIENT_CONTENT
+      imageAlt: string; // PENDING_CLIENT_CONTENT
+      href: string;
+    }>;
+  };
+  testimonials: {
+    heading: string; // PENDING_CLIENT_CONTENT
+    subhead: string; // PENDING_CLIENT_CONTENT
+    items: Array<{
+      quote: string; // PENDING_CLIENT_CONTENT
+      author: string; // PENDING_CLIENT_CONTENT
+      role: string; // PENDING_CLIENT_CONTENT
+      avatar: string; // PENDING_CLIENT_CONTENT
+      avatarAlt: string; // PENDING_CLIENT_CONTENT
+    }>;
+  };
 }
 
 // Placeholder copy sourced from the brochure per PROJECT_PLAN.md — swap in real
@@ -183,5 +200,92 @@ export const homeContent: HomeContent = {
     quote: "", // PENDING_CLIENT_CONTENT
     attribution: "", // PENDING_CLIENT_CONTENT
   },
-  testimonials: [],
+  portfolio: {
+    heading: "Portfolio", // PENDING_CLIENT_CONTENT
+    subhead: "Lorem ipsum dolor sit amet Lorem ipsum.", // PENDING_CLIENT_CONTENT — Figma itself uses lorem ipsum here, real copy not yet provided
+    items: [
+      {
+        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
+        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
+        href: "/portfolio",
+      },
+      {
+        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
+        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
+        href: "/portfolio",
+      },
+      {
+        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
+        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
+        href: "/portfolio",
+      },
+      {
+        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
+        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
+        href: "/portfolio",
+      },
+      {
+        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
+        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
+        href: "/portfolio",
+      },
+    ],
+  },
+  testimonials: {
+    heading: "Testimonials", // PENDING_CLIENT_CONTENT
+    subhead: "Lorem ipsum dolor sit amet Lorem ipsum.", // PENDING_CLIENT_CONTENT — Figma itself uses lorem ipsum here, real copy not yet provided
+    items: [
+      {
+        quote:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
+        author: "John Doe", // PENDING_CLIENT_CONTENT
+        role: "Our Customer", // PENDING_CLIENT_CONTENT
+        avatar:
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+      },
+      {
+        quote:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
+        author: "John Doe", // PENDING_CLIENT_CONTENT
+        role: "Our Customer", // PENDING_CLIENT_CONTENT
+        avatar:
+          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+      },
+      {
+        quote:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
+        author: "John Doe", // PENDING_CLIENT_CONTENT
+        role: "Our Customer", // PENDING_CLIENT_CONTENT
+        avatar:
+          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+      },
+      {
+        quote:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
+        author: "John Doe", // PENDING_CLIENT_CONTENT
+        role: "Our Customer", // PENDING_CLIENT_CONTENT
+        avatar:
+          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+      },
+    ],
+  },
 };
