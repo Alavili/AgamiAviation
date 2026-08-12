@@ -8,8 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // Pixel-measured against Figma once section screenshots start coming in (PROJECT_PLAN.md §4).
-      colors: {},
+      // Sampled from figma_images/ (home hero, scrolled navbar, footer) — see styles/tokens.ts.
+      colors: {
+        brand: {
+          orange: "#FA911C",
+          "orange-dark": "#E0800F",
+        },
+        surface: {
+          dark: "#141D20",
+          black: "#000000",
+        },
+      },
     },
   },
   plugins: [],
