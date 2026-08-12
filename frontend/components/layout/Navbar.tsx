@@ -84,7 +84,7 @@ export function Navbar() {
     <header
       className={`fixed z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "inset-x-0 top-0 border-b border-white/10 bg-surface-dark/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-2xl backdrop-saturate-150"
+          ? "inset-x-0 top-0 bg-surface-dark/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-2xl backdrop-saturate-150"
           : "inset-x-2 top-2 bg-transparent sm:inset-x-3 sm:top-3 lg:inset-x-4 lg:top-4"
       }`}
     >
