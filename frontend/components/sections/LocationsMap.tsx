@@ -1,4 +1,3 @@
-import { WorldMapDots } from "./WorldMapDots";
 import { IndiaOutlineIcon, MapPinIcon, UAEOutlineIcon } from "../ui/icons";
 import type { HomeContent } from "../../content/home";
 
@@ -41,7 +40,13 @@ export function LocationsMap({ locations }: LocationsMapProps) {
   return (
     <div>
       <div className="relative mx-auto aspect-[1000/460] w-full max-w-5xl">
-        <WorldMapDots className="absolute inset-0 h-full w-full" />
+        {/* eslint-disable-next-line @next/next/no-img-element -- static SVG, no next/image optimization needed */}
+        <img
+          src="/images/map%201.svg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-contain"
+        />
 
         {locations.map((location) => (
           <MapPinIcon

@@ -106,7 +106,7 @@ export const homeContent: HomeContent = {
   aboutTeaser: {
     heading: "About AGAMI", // PENDING_CLIENT_CONTENT
     body: "Agami Aviation is a trusted one-stop solution provider for the complete range of Ground Support Equipment (GSE), delivering innovative, reliable, and cost-effective solutions to the aviation industry.", // PENDING_CLIENT_CONTENT
-    videoUrl: "", // PENDING_CLIENT_CONTENT
+    videoUrl: "https://assets.mixkit.co/videos/28000/28000-720.mp4", // PENDING_CLIENT_CONTENT — placeholder aviation stock video (Mixkit, "plane taking off at dusk"), swap for real company video
     ctaLabel: "Discover", // PENDING_CLIENT_CONTENT
     ctaHref: "/about",
   },

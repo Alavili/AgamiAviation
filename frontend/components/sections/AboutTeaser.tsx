@@ -11,7 +11,7 @@ interface AboutTeaserProps {
 
 export function AboutTeaser({ content, locations }: AboutTeaserProps) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-24 lg:px-12">
+    <section className="mx-auto flex min-h-screen max-w-7xl flex-col justify-between gap-10 px-6 py-16 sm:px-8 sm:py-24 lg:px-12">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           <SectionHeading>{content.heading}</SectionHeading>
@@ -25,15 +25,14 @@ export function AboutTeaser({ content, locations }: AboutTeaserProps) {
 
         <div className="aspect-video w-full overflow-hidden rounded-2xl bg-gray-200">
           {content.videoUrl ? (
-            <a
-              href={content.videoUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex h-full w-full items-center justify-center"
-              aria-label="Play company video"
-            >
-              <PlayButton />
-            </a>
+            <video
+              className="h-full w-full object-cover"
+              src={content.videoUrl}
+              controls
+              muted
+              loop
+              playsInline
+            />
           ) : (
             <div
               className="flex h-full w-full items-center justify-center"
@@ -45,7 +44,7 @@ export function AboutTeaser({ content, locations }: AboutTeaserProps) {
         </div>
       </div>
 
-      <div className="mt-16 sm:mt-24">
+      <div>
         <LocationsMap locations={locations} />
       </div>
     </section>
