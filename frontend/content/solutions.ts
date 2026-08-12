@@ -1,5 +1,6 @@
 export interface SolutionSectionContent {
   number: string; // "01", "02"
+  anchorId: string; // stable id for in-page + footer links, e.g. /solutions#gsu-system
   heading: string; // PENDING_CLIENT_CONTENT
   body: string; // PENDING_CLIENT_CONTENT
   items: string[]; // PENDING_CLIENT_CONTENT
@@ -25,12 +26,14 @@ export const solutionsContent: SolutionsContent = {
   sections: [
     {
       number: "01",
+      anchorId: "gsu-system",
       heading: "Integrated Aircraft GSU System", // PENDING_CLIENT_CONTENT
       body: "", // PENDING_CLIENT_CONTENT
       items: ["PCA", "GPU", "Potable Water", "Sewage", "Blue Water"], // PENDING_CLIENT_CONTENT
     },
     {
       number: "02",
+      anchorId: "scope-of-services",
       heading: "Solutions Offered / Scope of Services", // PENDING_CLIENT_CONTENT
       body: "", // PENDING_CLIENT_CONTENT
       items: [

@@ -18,12 +18,21 @@ interface SocialLinksProps {
   links: SocialLink[];
   className?: string;
   linkClassName?: string;
+  variant?: "outline" | "solid";
 }
+
+const VARIANT_CLASSNAMES = {
+  outline:
+    "flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-brand-orange hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange",
+  solid:
+    "flex h-9 w-9 items-center justify-center rounded-full bg-brand-orange text-white transition hover:bg-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+} as const;
 
 export function SocialLinks({
   links,
   className,
   linkClassName,
+  variant = "outline",
 }: SocialLinksProps) {
   return (
     <ul className={`flex items-center gap-3 ${className ?? ""}`}>
@@ -34,10 +43,7 @@ export function SocialLinks({
             <a
               href={link.href}
               aria-label={`AGAMI Aviation on ${link.platform}`}
-              className={
-                linkClassName ??
-                "flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-brand-orange hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
-              }
+              className={linkClassName ?? VARIANT_CLASSNAMES[variant]}
             >
               <Icon className="h-4 w-4" />
             </a>
