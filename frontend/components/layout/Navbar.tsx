@@ -89,9 +89,14 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        {/* Mobile (all scroll positions): logo + hamburger */}
-        <div className="flex w-full items-center justify-between lg:hidden">
-          <Logo />
+        {/* Mobile (all scroll positions): social left / logo centered / hamburger right */}
+        <div className="flex w-full items-center justify-between gap-2 lg:hidden">
+          <SocialLinks
+            links={navbarContent.social}
+            variant="glassSm"
+            gapClassName="gap-1.5"
+          />
+          <Logo imageClassName="h-8 w-8 sm:h-10 sm:w-10" stacked />
           <IconButton label="Open menu" onClick={openMenu}>
             <MenuIcon className="h-4 w-4" />
           </IconButton>
@@ -101,7 +106,7 @@ export function Navbar() {
         {!isScrolled && (
           <div className="hidden w-full items-center justify-between lg:flex">
             <SocialLinks links={navbarContent.social} />
-            <Logo />
+            <Logo imageClassName="h-12 w-12" stacked />
             <IconButton label="Open menu" onClick={openMenu}>
               <MenuIcon className="h-4 w-4" />
             </IconButton>
@@ -111,7 +116,7 @@ export function Navbar() {
         {/* Desktop, scrolled: logo / full nav links / social + Contact CTA */}
         {isScrolled && (
           <div className="hidden w-full items-center justify-between lg:flex">
-            <Logo />
+            <Logo imageClassName="h-11 w-11" stacked />
             <nav aria-label="Main">
               <ul className="flex items-center gap-8">
                 {navbarContent.links.map((link) => (
@@ -153,7 +158,7 @@ export function Navbar() {
             className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col gap-8 bg-surface-dark px-6 py-6 shadow-xl"
           >
             <div className="flex items-center justify-between">
-              <Logo />
+              <Logo imageClassName="h-10 w-10" stacked />
               <IconButton
                 label="Close menu"
                 onClick={() => setIsMenuOpen(false)}
