@@ -83,7 +83,7 @@ export function HeroCarousel({
 
   return (
     <section
-      className={`relative min-h-screen overflow-hidden ${className ?? ""}`}
+      className={`relative mx-4 min-h-screen overflow-hidden rounded-[2rem] sm:mx-6 lg:mx-10 ${className ?? ""}`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
