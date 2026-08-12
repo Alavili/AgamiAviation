@@ -82,36 +82,52 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-4 top-0 z-50 transition-all duration-300 sm:inset-x-6 lg:inset-x-10 ${
+      className={`fixed z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "rounded-t-[2rem] border-b border-white/10 bg-surface-dark/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-2xl backdrop-saturate-150"
-          : "bg-transparent"
+          ? "inset-x-0 top-0 bg-surface-dark/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-2xl backdrop-saturate-150"
+          : "inset-x-2 top-2 bg-transparent sm:inset-x-3 sm:top-3 lg:inset-x-4 lg:top-4"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        {/* Mobile (all scroll positions): logo + hamburger */}
-        <div className="flex w-full items-center justify-between lg:hidden">
-          <Logo />
+        {/* Mobile (all scroll positions): social left / logo centered / hamburger right */}
+        <div className="flex w-full items-center justify-between gap-2 lg:hidden">
+          <SocialLinks
+            links={navbarContent.social}
+            variant="glassSm"
+            gapClassName="gap-1.5"
+          />
+          <Logo imageClassName="h-8 w-8 sm:h-10 sm:w-10" stacked />
           <IconButton label="Open menu" onClick={openMenu}>
             <MenuIcon className="h-4 w-4" />
           </IconButton>
         </div>
 
-        {/* Desktop, at top of page: social left / logo centered / hamburger right */}
-        {!isScrolled && (
-          <div className="hidden w-full items-center justify-between lg:flex">
+        {/* Desktop: both states are always mounted and cross-fade via opacity,
+            so the shell (position/background) and content transition together
+            instead of the content hard-swapping mid-animation. */}
+        <div className="relative hidden w-full min-h-[48px] lg:block">
+          {/* At top of page: social left / logo centered / hamburger right */}
+          <div
+            inert={isScrolled}
+            className={`absolute inset-0 flex w-full items-center justify-between transition-opacity duration-500 ease-in-out ${
+              isScrolled ? "pointer-events-none opacity-0" : "opacity-100"
+            }`}
+          >
             <SocialLinks links={navbarContent.social} />
-            <Logo />
+            <Logo imageClassName="h-12 w-12" stacked />
             <IconButton label="Open menu" onClick={openMenu}>
               <MenuIcon className="h-4 w-4" />
             </IconButton>
           </div>
-        )}
 
-        {/* Desktop, scrolled: logo / full nav links / social + Contact CTA */}
-        {isScrolled && (
-          <div className="hidden w-full items-center justify-between lg:flex">
-            <Logo />
+          {/* Scrolled: logo / full nav links / social + Contact CTA */}
+          <div
+            inert={!isScrolled}
+            className={`absolute inset-0 flex w-full items-center justify-between transition-opacity duration-500 ease-in-out ${
+              isScrolled ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+          >
+            <Logo imageClassName="h-11 w-11" stacked />
             <nav aria-label="Main">
               <ul className="flex items-center gap-8">
                 {navbarContent.links.map((link) => (
@@ -133,7 +149,7 @@ export function Navbar() {
               </CtaButton>
             </div>
           </div>
-        )}
+        </div>
       </div>
 
       {isMenuOpen && (
@@ -153,7 +169,7 @@ export function Navbar() {
             className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col gap-8 bg-surface-dark px-6 py-6 shadow-xl"
           >
             <div className="flex items-center justify-between">
-              <Logo />
+              <Logo imageClassName="h-10 w-10" stacked />
               <IconButton
                 label="Close menu"
                 onClick={() => setIsMenuOpen(false)}

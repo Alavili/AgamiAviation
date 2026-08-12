@@ -27,6 +27,7 @@ export const navbarContent: NavbarContent = {
   ctaLabel: "Contact",
   ctaHref: "/contact",
   social: [
+    { platform: "facebook", href: "#" }, // PENDING_CLIENT_CONTENT
     { platform: "linkedin", href: "#" }, // PENDING_CLIENT_CONTENT
     { platform: "instagram", href: "#" }, // PENDING_CLIENT_CONTENT
     { platform: "x", href: "#" }, // PENDING_CLIENT_CONTENT
