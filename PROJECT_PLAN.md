@@ -21,7 +21,7 @@ The Figma proto's "Flows" panel is the definitive page list — 5 flows, not one
 | Route | Figma flow | Content |
 |---|---|---|
 | `/` | Home | Hero carousel ("One-Stop GSE. Hire. Purchase. Service."), About teaser + video + office locations map, feature/quote block, **Our Products** accordion (9 items), **Portfolio** gallery carousel, testimonials, footer |
-| `/about` | About Us | Hero, AGAMI intro + video, pull-quote block, Mission / Vision / Value 3-column, footer |
+| `/about` | About Us | Hero, AGAMI intro + video, pull-quote block, Mission / Vision / Value 3-column, **LocationsMap** (added — see note below), footer |
 | `/solutions` | Solutions | Single scrolling page, 2 numbered sections: **01** Integrated Aircraft GSU System (PCA \| GPU \| Potable Water \| Sewage \| Blue Water), **02** Solutions Offered / Scope of Services (fume extraction, aircraft docking, maintenance platforms, engine handling, system design & engineering, airside systems integration), footer |
 | `/products/[slug]` | Products Detail page | One reusable template for all 9 products — hero with product name, model/variant tab switcher (e.g. PCA200DX), spec content, footer |
 | `/contact` | Contact Us | Hero, contact form (Full Name, Email, Subject, Message), map/globe graphic, footer |
@@ -30,6 +30,8 @@ The Figma proto's "Flows" panel is the definitive page list — 5 flows, not one
 `pre-conditioned-air-unit`, `pop-up-pit-system`, `mobile-gpu`, `hatch-pit-system`, `aerial-jib-platforms`, `load-bank`, `400hz-gpu`, `28v-dc-gpu`, `jet-blast-deflector`.
 
 Global nav (from the footer, present on every page): **Main Page** — Home, About, Portfolio, Contact Us. **Solution** — 5 links. **Product** — 9 links (2 columns).
+
+**Note:** `LocationsMap` (dotted world-map graphic, originally spec'd only for Home + Contact) is now also used on About. Asset provided directly: `design-assets/world-map.svg` at repo root — this is the actual Figma export (dotted-map raster embedded in an SVG wrapper), not a placeholder. Move it into `frontend/public/images/` during scaffold and reference it as-is rather than rebuilding the dot pattern from scratch.
 
 ### 1a. Open questions — resolved
 

@@ -2,6 +2,7 @@ import {
   HeroCarousel,
   type HeroCarouselSlide,
 } from "../components/sections/HeroCarousel";
+import { AboutTeaser } from "../components/sections/AboutTeaser";
 import { homeContent } from "../content/home";
 
 // "Hire. Purchase. Service." renders as words joined by orange dots, matching
@@ -46,5 +47,13 @@ export default function HomePage() {
     }),
   );
 
-  return <HeroCarousel slides={slides} trustBar={homeContent.heroTrustBar} />;
+  return (
+    <>
+      <HeroCarousel slides={slides} trustBar={homeContent.heroTrustBar} />
+      <AboutTeaser
+        content={homeContent.aboutTeaser}
+        locations={homeContent.locations}
+      />
+    </>
+  );
 }
