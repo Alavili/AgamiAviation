@@ -43,6 +43,39 @@ export const homeContent: HomeContent = {
       backgroundImageAlt:
         "Ground support vehicles around an aircraft on an airport tarmac", // PENDING_CLIENT_CONTENT
     },
+    {
+      headingLines: ["Certified Ground", "Support Technicians"], // PENDING_CLIENT_CONTENT
+      subhead:
+        "Trained crews and responsive maintenance keep every unit turnaround-ready, at any hour.", // PENDING_CLIENT_CONTENT
+      ctaLabel: "Discover", // PENDING_CLIENT_CONTENT
+      ctaHref: "/solutions",
+      backgroundImage:
+        "https://images.unsplash.com/photo-1594973841081-ec0c9c7e3064?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+      backgroundImageAlt:
+        "A ground crew technician inspecting an aircraft on the tarmac", // PENDING_CLIENT_CONTENT
+    },
+    {
+      headingLines: ["Built For", "Turnaround Speed"], // PENDING_CLIENT_CONTENT
+      subhead:
+        "From gate arrival to pushback, our equipment is engineered to keep tight schedules on time.", // PENDING_CLIENT_CONTENT
+      ctaLabel: "Discover", // PENDING_CLIENT_CONTENT
+      ctaHref: "/solutions",
+      backgroundImage:
+        "https://images.unsplash.com/photo-1571086291540-b137111fa1c7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+      backgroundImageAlt:
+        "Ground support carts and tugs beside a wide-body aircraft at the gate", // PENDING_CLIENT_CONTENT
+    },
+    {
+      headingLines: ["Wherever Your", "Fleet Operates"], // PENDING_CLIENT_CONTENT
+      subhead:
+        "Regional coverage and rapid deployment mean the right equipment arrives exactly when you need it.", // PENDING_CLIENT_CONTENT
+      ctaLabel: "Discover", // PENDING_CLIENT_CONTENT
+      ctaHref: "/solutions",
+      backgroundImage:
+        "https://images.unsplash.com/photo-1542296332-2e4473faf563?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+      backgroundImageAlt:
+        "Ground crew and tugs preparing an aircraft for pushback at sunset", // PENDING_CLIENT_CONTENT
+    },
   ],
   heroTrustBar: [
     "Partner One",
