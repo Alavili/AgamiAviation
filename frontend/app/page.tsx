@@ -6,6 +6,7 @@ import { AboutTeaser } from "../components/sections/AboutTeaser";
 import { SolutionShowcase } from "../components/sections/SolutionShowcase";
 import { ProductAccordion } from "../components/sections/ProductAccordion";
 import { PortfolioCarousel } from "../components/sections/PortfolioCarousel";
+import { TestimonialCarousel } from "../components/sections/TestimonialCarousel";
 import { homeContent } from "../content/home";
 import { products, productsIntro } from "../content/products";
 
@@ -61,6 +62,7 @@ export default function HomePage() {
       <SolutionShowcase content={homeContent.solutionShowcase} />
       <ProductAccordion intro={productsIntro} products={products} />
       <PortfolioCarousel content={homeContent.portfolio} />
+      <TestimonialCarousel content={homeContent.testimonials} />
     </>
   );
 }

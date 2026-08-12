@@ -283,6 +283,19 @@ export function IndiaOutlineIcon({ className }: IconProps) {
   );
 }
 
+export function QuoteIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 32 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M13.5 0C6.6 2.4 2 8.1 2 15.3 2 20.1 5.1 24 10.1 24c4.1 0 6.9-3.2 6.9-6.9 0-3.5-2.4-6-5.6-6-.6 0-1.1.1-1.5.2C10.7 7.4 13 3.8 16.6 1.9L13.5 0Zm18 0c-6.9 2.4-11.5 8.1-11.5 15.3 0 4.8 3.1 8.7 8.1 8.7 4.1 0 6.9-3.2 6.9-6.9 0-3.5-2.4-6-5.6-6-.6 0-1.1.1-1.5.2.8-3.9 3.1-7.5 6.7-9.4L31.5 0Z" />
+    </svg>
+  );
+}
+
 export function XIcon({ className }: IconProps) {
   return (
     <svg
