@@ -34,7 +34,7 @@ const columns: FooterColumn[] = [
 
 export function Footer() {
   return (
-    <footer className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <footer className="bg-white px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
       <div className="mx-auto max-w-7xl rounded-[2rem] bg-surface-black px-6 py-10 text-white sm:px-10">
         <div className="flex flex-col gap-8 border-b border-white/10 pb-8 lg:flex-row lg:items-center lg:justify-between">
           <Logo />
