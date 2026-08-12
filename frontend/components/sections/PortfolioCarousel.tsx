@@ -83,6 +83,11 @@ export function PortfolioCarousel({ content }: PortfolioCarouselProps) {
   );
 }
 
+// The active card's gradient is pixel-sampled from the Figma screenshot —
+// not a brand token, so it's applied inline rather than added to
+// tailwind.config.ts for a single one-off use.
+const ACTIVE_CARD_GRADIENT = "linear-gradient(180deg, #1276BC 0%, #083656 100%)";
+
 function PortfolioCard({
   item,
   isActive,
@@ -92,9 +97,10 @@ function PortfolioCard({
 }) {
   return (
     <div
-      className={`flex flex-col rounded-3xl p-3 pb-9 transition-colors ${
-        isActive ? "border-2 border-blue-300 bg-surface-dark" : "bg-blue-50"
+      className={`relative flex flex-col rounded-3xl p-3 pb-9 transition-colors ${
+        isActive ? "border-2 border-blue-300" : "bg-blue-50"
       }`}
+      style={isActive ? { background: ACTIVE_CARD_GRADIENT } : undefined}
     >
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
         <Image
@@ -106,7 +112,7 @@ function PortfolioCard({
         />
       </div>
 
-      <div className="relative flex flex-1 flex-col items-center px-4 pt-6 text-center">
+      <div className="flex flex-1 flex-col items-center px-4 pt-6 text-center">
         <span
           className={`text-xs font-semibold uppercase tracking-wide ${
             isActive ? "text-white/60" : "text-gray-500"
@@ -122,15 +128,31 @@ function PortfolioCard({
           {item.title}
           <span className="text-brand-orange">.</span>
         </p>
+      </div>
 
-        <Link
-          href={item.href}
-          className="absolute -bottom-14 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white p-2.5 shadow-md"
-        >
-          <span className="block rounded-full bg-brand-orange px-6 py-3 text-xs font-semibold tracking-wide text-white transition hover:bg-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange">
-            VIEW DETAILS
-          </span>
-        </Link>
+      {/* "VIEW DETAILS" dips out of the card's bottom edge. Two small
+          corner-radius-100% fillets, tucked right where the socket meets
+          the card, bite a quarter-circle out of the card so the straight
+          edge scallops into the socket's curve instead of leaving a seam. */}
+      <div className="pointer-events-none absolute inset-x-0 -bottom-6 flex justify-center">
+        <div className="relative">
+          <span
+            aria-hidden
+            className="absolute bottom-6 left-0 h-3 w-3 rounded-tr-full bg-white"
+          />
+          <span
+            aria-hidden
+            className="absolute bottom-6 right-0 h-3 w-3 rounded-tl-full bg-white"
+          />
+          <Link
+            href={item.href}
+            className="pointer-events-auto relative block whitespace-nowrap rounded-full bg-white p-2 shadow-md"
+          >
+            <span className="block rounded-full bg-brand-orange px-6 py-3 text-xs font-semibold tracking-wide text-white transition hover:bg-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange">
+              VIEW DETAILS
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );
