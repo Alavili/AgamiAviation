@@ -1,4 +1,6 @@
 import { HeroSlideContent } from "./HeroSlideContent";
+import { TrustBar } from "./TrustBar";
+import type { TrustBadge } from "../../content/home";
 
 interface HeroBannerProps {
   heading: React.ReactNode;
@@ -7,7 +9,7 @@ interface HeroBannerProps {
   ctaHref?: string;
   backgroundImage: string;
   backgroundImageAlt: string;
-  trustBar?: string[];
+  trustBar?: TrustBadge[];
   className?: string;
 }
 
@@ -35,17 +37,11 @@ export function HeroBanner({
         priority
       />
 
-      {trustBar && trustBar.length > 0 && (
-        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-center justify-center gap-8 bg-[#1274B9]/90 px-6 py-5">
-          {trustBar.map((name) => (
-            <span
-              key={name}
-              className="text-sm font-medium uppercase tracking-wide text-white/90"
-            >
-              {name}
-            </span>
-          ))}
-        </div>
+      {trustBar && (
+        <TrustBar
+          badges={trustBar}
+          className="absolute inset-x-0 bottom-0 z-10"
+        />
       )}
     </section>
   );

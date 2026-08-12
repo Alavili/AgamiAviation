@@ -7,11 +7,17 @@ export interface HeroSlide {
   backgroundImageAlt: string; // PENDING_CLIENT_CONTENT
 }
 
+export interface TrustBadge {
+  icon: "globe" | "wrench" | "clock" | "shield" | "plane";
+  label: string;
+}
+
 export interface HomeContent {
   heroSlides: HeroSlide[];
-  // Placeholder trust-bar strip under the hero — structural only, no real
-  // partner/client names or logos yet. See PROJECT_PLAN.md discussion.
-  heroTrustBar: string[]; // PENDING_CLIENT_CONTENT
+  // Generic aviation-industry badges under the hero — deliberately not real
+  // company/partner logos (no client relationships to claim yet). Swap for
+  // real client/partner logos once those exist.
+  heroTrustBar: TrustBadge[]; // PENDING_CLIENT_CONTENT
   aboutTeaser: {
     heading: string; // PENDING_CLIENT_CONTENT
     body: string; // PENDING_CLIENT_CONTENT
@@ -78,12 +84,12 @@ export const homeContent: HomeContent = {
     },
   ],
   heroTrustBar: [
-    "Partner One",
-    "Partner Two",
-    "Partner Three",
-    "Partner Four",
-    "Partner Five",
-  ], // PENDING_CLIENT_CONTENT — placeholder names, not real partners
+    { icon: "globe", label: "Global Coverage" }, // PENDING_CLIENT_CONTENT
+    { icon: "wrench", label: "Certified Technicians" }, // PENDING_CLIENT_CONTENT
+    { icon: "clock", label: "24/7 Support" }, // PENDING_CLIENT_CONTENT
+    { icon: "shield", label: "OEM-Grade Equipment" }, // PENDING_CLIENT_CONTENT
+    { icon: "plane", label: "Rapid Turnaround" }, // PENDING_CLIENT_CONTENT
+  ],
   aboutTeaser: {
     heading: "", // PENDING_CLIENT_CONTENT
     body: "", // PENDING_CLIENT_CONTENT
