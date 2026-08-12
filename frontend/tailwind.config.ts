@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -8,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-space-grotesk)", ...defaultTheme.fontFamily.sans],
+      },
       // Sampled from figma_images/ (home hero, scrolled navbar, footer) — see styles/tokens.ts.
       colors: {
         brand: {
