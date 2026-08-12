@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { HeroSlideContent } from "./HeroSlideContent";
+import { TrustBar } from "./TrustBar";
 import { ChevronLeftIcon, ChevronRightIcon } from "../ui/icons";
+import type { TrustBadge } from "../../content/home";
 
 export interface HeroCarouselSlide {
   heading: React.ReactNode;
@@ -16,13 +18,14 @@ export interface HeroCarouselSlide {
 
 interface HeroCarouselProps {
   slides: HeroCarouselSlide[];
-  trustBar?: string[];
+  trustBar?: TrustBadge[];
   autoPlayIntervalMs?: number;
   className?: string;
 }
 
+// Minimal by design — a small hint of a control, not a prominent button.
 const ARROW_BUTTON_CLASSNAME =
-  "flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition hover:border-brand-orange hover:bg-white/20 hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange";
+  "flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-white/70 backdrop-blur-md transition hover:bg-white/15 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange";
 
 export function HeroCarousel({
   slides,
@@ -123,17 +126,17 @@ export function HeroCarousel({
             type="button"
             onClick={prev}
             aria-label="Previous slide"
-            className={`absolute left-4 top-1/2 z-20 -translate-y-1/2 sm:left-8 ${ARROW_BUTTON_CLASSNAME}`}
+            className={`absolute left-3 top-1/2 z-20 -translate-y-1/2 sm:left-6 ${ARROW_BUTTON_CLASSNAME}`}
           >
-            <ChevronLeftIcon className="h-5 w-5" />
+            <ChevronLeftIcon className="h-4 w-4" />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label="Next slide"
-            className={`absolute right-4 top-1/2 z-20 -translate-y-1/2 sm:right-8 ${ARROW_BUTTON_CLASSNAME}`}
+            className={`absolute right-3 top-1/2 z-20 -translate-y-1/2 sm:right-6 ${ARROW_BUTTON_CLASSNAME}`}
           >
-            <ChevronRightIcon className="h-5 w-5" />
+            <ChevronRightIcon className="h-4 w-4" />
           </button>
 
           <div
@@ -159,17 +162,11 @@ export function HeroCarousel({
         </>
       )}
 
-      {trustBar && trustBar.length > 0 && (
-        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-center justify-center gap-8 bg-[#1274B9]/90 px-6 py-5">
-          {trustBar.map((name) => (
-            <span
-              key={name}
-              className="text-sm font-medium uppercase tracking-wide text-white/90"
-            >
-              {name}
-            </span>
-          ))}
-        </div>
+      {trustBar && (
+        <TrustBar
+          badges={trustBar}
+          className="absolute inset-x-0 bottom-0 z-10"
+        />
       )}
     </section>
   );
