@@ -23,7 +23,16 @@ export interface HomeContent {
     heading: string; // PENDING_CLIENT_CONTENT
     body: string; // PENDING_CLIENT_CONTENT
     videoUrl: string; // PENDING_CLIENT_CONTENT
+    ctaLabel: string; // PENDING_CLIENT_CONTENT
+    ctaHref: string;
   };
+  locations: Array<{
+    country: "uae" | "india";
+    label: string; // PENDING_CLIENT_CONTENT
+    address: string; // PENDING_CLIENT_CONTENT
+    // Position of the map pin, as a percentage of the map graphic's width/height.
+    position: { xPercent: number; yPercent: number };
+  }>;
   pullQuote: {
     quote: string; // PENDING_CLIENT_CONTENT
     attribution: string; // PENDING_CLIENT_CONTENT
@@ -95,10 +104,28 @@ export const homeContent: HomeContent = {
     }, // PENDING_CLIENT_CONTENT
   ],
   aboutTeaser: {
-    heading: "", // PENDING_CLIENT_CONTENT
-    body: "", // PENDING_CLIENT_CONTENT
+    heading: "About AGAMI", // PENDING_CLIENT_CONTENT
+    body: "Agami Aviation is a trusted one-stop solution provider for the complete range of Ground Support Equipment (GSE), delivering innovative, reliable, and cost-effective solutions to the aviation industry.", // PENDING_CLIENT_CONTENT
     videoUrl: "", // PENDING_CLIENT_CONTENT
+    ctaLabel: "Discover", // PENDING_CLIENT_CONTENT
+    ctaHref: "/about",
   },
+  locations: [
+    {
+      country: "uae",
+      label: "UAE Office", // PENDING_CLIENT_CONTENT — real UAE office address not yet provided
+      address:
+        "B5, Mettupalayam Rd, near John Bosco, near Ford showroom, Gounder Mills, Coimbatore - 641029", // PENDING_CLIENT_CONTENT
+      position: { xPercent: 52, yPercent: 44 },
+    },
+    {
+      country: "india",
+      label: "India Office", // PENDING_CLIENT_CONTENT
+      address:
+        "B5, Mettupalayam Rd, near John Bosco, near Ford showroom, Gounder Mills, Coimbatore - 641029", // PENDING_CLIENT_CONTENT
+      position: { xPercent: 63, yPercent: 51 },
+    },
+  ],
   pullQuote: {
     quote: "", // PENDING_CLIENT_CONTENT
     attribution: "", // PENDING_CLIENT_CONTENT
