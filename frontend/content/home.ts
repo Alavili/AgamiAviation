@@ -1,13 +1,17 @@
 export interface HeroSlide {
-  heading: string; // PENDING_CLIENT_CONTENT
+  headingLines: string[]; // PENDING_CLIENT_CONTENT
   subhead: string; // PENDING_CLIENT_CONTENT
   ctaLabel: string; // PENDING_CLIENT_CONTENT
   ctaHref: string;
-  backgroundImage: string; // PENDING_CLIENT_CONTENT
+  backgroundImage: string; // PENDING_CLIENT_CONTENT — sourced from Unsplash for now, swap for real photography
+  backgroundImageAlt: string; // PENDING_CLIENT_CONTENT
 }
 
 export interface HomeContent {
   heroSlides: HeroSlide[];
+  // Placeholder trust-bar strip under the hero — structural only, no real
+  // partner/client names or logos yet. See PROJECT_PLAN.md discussion.
+  heroTrustBar: string[]; // PENDING_CLIENT_CONTENT
   aboutTeaser: {
     heading: string; // PENDING_CLIENT_CONTENT
     body: string; // PENDING_CLIENT_CONTENT
@@ -29,13 +33,24 @@ export interface HomeContent {
 export const homeContent: HomeContent = {
   heroSlides: [
     {
-      heading: "One-Stop GSE. Hire. Purchase. Service.", // PENDING_CLIENT_CONTENT
-      subhead: "", // PENDING_CLIENT_CONTENT
-      ctaLabel: "Explore Products", // PENDING_CLIENT_CONTENT
+      headingLines: ["One-Stop GSE", "Hire. Purchase. Service."], // PENDING_CLIENT_CONTENT
+      subhead:
+        "Complete ground support equipment solutions — from pre-conditioned air units to aircraft docking systems, delivered wherever your fleet operates.", // PENDING_CLIENT_CONTENT
+      ctaLabel: "Discover", // PENDING_CLIENT_CONTENT
       ctaHref: "/solutions",
-      backgroundImage: "", // PENDING_CLIENT_CONTENT
+      backgroundImage:
+        "https://images.unsplash.com/photo-1769273747778-74eeb3f6d551?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+      backgroundImageAlt:
+        "Ground support vehicles around an aircraft on an airport tarmac", // PENDING_CLIENT_CONTENT
     },
   ],
+  heroTrustBar: [
+    "Partner One",
+    "Partner Two",
+    "Partner Three",
+    "Partner Four",
+    "Partner Five",
+  ], // PENDING_CLIENT_CONTENT — placeholder names, not real partners
   aboutTeaser: {
     heading: "", // PENDING_CLIENT_CONTENT
     body: "", // PENDING_CLIENT_CONTENT
