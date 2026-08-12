@@ -23,7 +23,7 @@ function IconButton({
     <button
       type="button"
       onClick={onClick}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.4),0_8px_24px_rgba(8,20,35,0.35)] backdrop-blur-lg backdrop-saturate-150 transition hover:border-brand-orange hover:bg-white/20 hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
+      className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[rgba(105,105,105,0.2)] text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.4),0_8px_24px_rgba(8,20,35,0.35)] backdrop-blur-lg backdrop-saturate-150 transition hover:bg-white/20 hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
     >
       {children}
       <span className="sr-only">{label}</span>
@@ -93,7 +93,7 @@ export function Navbar() {
         <div className="flex w-full items-center justify-between lg:hidden">
           <Logo />
           <IconButton label="Open menu" onClick={openMenu}>
-            <MenuIcon className="h-5 w-5" />
+            <MenuIcon className="h-4 w-4" />
           </IconButton>
         </div>
 
@@ -103,7 +103,7 @@ export function Navbar() {
             <SocialLinks links={navbarContent.social} />
             <Logo />
             <IconButton label="Open menu" onClick={openMenu}>
-              <MenuIcon className="h-5 w-5" />
+              <MenuIcon className="h-4 w-4" />
             </IconButton>
           </div>
         )}
@@ -158,7 +158,7 @@ export function Navbar() {
                 label="Close menu"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <CloseIcon className="h-5 w-5" />
+                <CloseIcon className="h-4 w-4" />
               </IconButton>
             </div>
             <nav aria-label="Main">
