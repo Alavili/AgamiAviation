@@ -27,7 +27,7 @@ export function Logo({ className, wordmarkClassName }: LogoProps) {
           "text-lg font-semibold uppercase tracking-wide text-white"
         }
       >
-        AGAMI
+        AGAMI AVIATION
       </span>
     </Link>
   );
