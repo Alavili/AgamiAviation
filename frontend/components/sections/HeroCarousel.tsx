@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { HeroSlideContent } from "./HeroSlideContent";
 import { TrustBar } from "./TrustBar";
 import { ChevronLeftIcon, ChevronRightIcon } from "../ui/icons";
-import type { TrustBadge } from "../../content/home";
+import type { TrustLogo } from "../../content/home";
 
 export interface HeroCarouselSlide {
   heading: React.ReactNode;
@@ -18,7 +18,7 @@ export interface HeroCarouselSlide {
 
 interface HeroCarouselProps {
   slides: HeroCarouselSlide[];
-  trustBar?: TrustBadge[];
+  trustBar?: TrustLogo[];
   autoPlayIntervalMs?: number;
   className?: string;
 }

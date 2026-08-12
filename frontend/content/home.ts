@@ -7,17 +7,18 @@ export interface HeroSlide {
   backgroundImageAlt: string; // PENDING_CLIENT_CONTENT
 }
 
-export interface TrustBadge {
-  icon: "globe" | "wrench" | "clock" | "shield" | "plane";
-  label: string;
+export interface TrustLogo {
+  name: string;
+  src: string;
 }
 
 export interface HomeContent {
   heroSlides: HeroSlide[];
-  // Generic aviation-industry badges under the hero — deliberately not real
-  // company/partner logos (no client relationships to claim yet). Swap for
-  // real client/partner logos once those exist.
-  heroTrustBar: TrustBadge[]; // PENDING_CLIENT_CONTENT
+  // Airline logos under the hero — NOT real AGAMI clients/partners. Used
+  // purely for visual polish per your direction (same approach the Figma
+  // template itself took with unrelated consumer brand logos). Swap for
+  // real client/partner logos once those relationships exist.
+  heroTrustBar: TrustLogo[]; // PENDING_CLIENT_CONTENT
   aboutTeaser: {
     heading: string; // PENDING_CLIENT_CONTENT
     body: string; // PENDING_CLIENT_CONTENT
@@ -84,11 +85,14 @@ export const homeContent: HomeContent = {
     },
   ],
   heroTrustBar: [
-    { icon: "globe", label: "Global Coverage" }, // PENDING_CLIENT_CONTENT
-    { icon: "wrench", label: "Certified Technicians" }, // PENDING_CLIENT_CONTENT
-    { icon: "clock", label: "24/7 Support" }, // PENDING_CLIENT_CONTENT
-    { icon: "shield", label: "OEM-Grade Equipment" }, // PENDING_CLIENT_CONTENT
-    { icon: "plane", label: "Rapid Turnaround" }, // PENDING_CLIENT_CONTENT
+    { name: "Emirates", src: "/images/trust-logos/emirates.svg" }, // PENDING_CLIENT_CONTENT
+    { name: "Etihad Airways", src: "/images/trust-logos/etihad.svg" }, // PENDING_CLIENT_CONTENT
+    { name: "Qatar Airways", src: "/images/trust-logos/qatar-airways.svg" }, // PENDING_CLIENT_CONTENT
+    { name: "Lufthansa", src: "/images/trust-logos/lufthansa.svg" }, // PENDING_CLIENT_CONTENT
+    {
+      name: "Singapore Airlines",
+      src: "/images/trust-logos/singapore-airlines.svg",
+    }, // PENDING_CLIENT_CONTENT
   ],
   aboutTeaser: {
     heading: "", // PENDING_CLIENT_CONTENT
