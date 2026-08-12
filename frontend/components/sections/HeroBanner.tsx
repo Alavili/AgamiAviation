@@ -25,7 +25,7 @@ export function HeroBanner({
 }: HeroBannerProps) {
   return (
     <section
-      className={`relative mx-4 min-h-screen overflow-hidden rounded-[2rem] sm:mx-6 lg:mx-10 ${className ?? ""}`}
+      className={`relative mx-2 mt-2 min-h-[calc(100vh-0.5rem)] overflow-hidden rounded-xl sm:mx-3 sm:mt-3 sm:min-h-[calc(100vh-0.75rem)] lg:mx-4 lg:mt-4 lg:min-h-[calc(100vh-1rem)] ${className ?? ""}`}
     >
       <HeroSlideContent
         heading={heading}

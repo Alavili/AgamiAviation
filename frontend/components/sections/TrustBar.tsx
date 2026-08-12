@@ -12,7 +12,7 @@ export function TrustBar({ badges, className }: TrustBarProps) {
 
   return (
     <div
-      className={`flex flex-wrap items-center justify-center gap-4 bg-[linear-gradient(90deg,#083656_0%,#1276BC_52%,#083656_100%)] px-6 py-5 ${className ?? ""}`}
+      className={`flex flex-wrap items-center justify-center gap-x-8 gap-y-4 bg-[linear-gradient(90deg,#083656_0%,#1276BC_52%,#083656_100%)] px-6 py-5 sm:gap-x-12 ${className ?? ""}`}
     >
       {badges.map((logo) => (
         <div
