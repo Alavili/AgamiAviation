@@ -23,7 +23,7 @@ interface SocialLinksProps {
 
 const VARIANT_CLASSNAMES = {
   glass:
-    "flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition hover:border-brand-orange hover:bg-white/20 hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange",
+    "flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.4),0_8px_24px_rgba(8,20,35,0.35)] backdrop-blur-lg backdrop-saturate-150 transition hover:border-brand-orange hover:bg-white/20 hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange",
   solid:
     "flex h-9 w-9 items-center justify-center rounded-full bg-brand-orange text-white transition hover:bg-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
 } as const;
