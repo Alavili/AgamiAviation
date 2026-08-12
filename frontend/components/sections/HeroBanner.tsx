@@ -1,6 +1,6 @@
 import { HeroSlideContent } from "./HeroSlideContent";
 import { TrustBar } from "./TrustBar";
-import type { TrustBadge } from "../../content/home";
+import type { TrustLogo } from "../../content/home";
 
 interface HeroBannerProps {
   heading: React.ReactNode;
@@ -9,7 +9,7 @@ interface HeroBannerProps {
   ctaHref?: string;
   backgroundImage: string;
   backgroundImageAlt: string;
-  trustBar?: TrustBadge[];
+  trustBar?: TrustLogo[];
   className?: string;
 }
 
