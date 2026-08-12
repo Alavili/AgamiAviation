@@ -1,4 +1,7 @@
-import { HeroBanner } from "../components/sections/HeroBanner";
+import {
+  HeroCarousel,
+  type HeroCarouselSlide,
+} from "../components/sections/HeroCarousel";
 import { homeContent } from "../content/home";
 
 // "Hire. Purchase. Service." renders as words joined by orange dots, matching
@@ -21,23 +24,27 @@ function DotSeparatedLine({ text }: { text: string }) {
 }
 
 export default function HomePage() {
-  const [slide] = homeContent.heroSlides;
-
-  return (
-    <HeroBanner
-      heading={
+  const slides: HeroCarouselSlide[] = homeContent.heroSlides.map(
+    (slide, index) => ({
+      headingText: `${slide.headingLines[0]} ${slide.headingLines[1]}`,
+      heading: (
         <>
           {slide.headingLines[0]}
           <br />
-          <DotSeparatedLine text={slide.headingLines[1]} />
+          {index === 0 ? (
+            <DotSeparatedLine text={slide.headingLines[1]} />
+          ) : (
+            slide.headingLines[1]
+          )}
         </>
-      }
-      subhead={slide.subhead}
-      ctaLabel={slide.ctaLabel}
-      ctaHref={slide.ctaHref}
-      backgroundImage={slide.backgroundImage}
-      backgroundImageAlt={slide.backgroundImageAlt}
-      trustBar={homeContent.heroTrustBar}
-    />
+      ),
+      subhead: slide.subhead,
+      ctaLabel: slide.ctaLabel,
+      ctaHref: slide.ctaHref,
+      backgroundImage: slide.backgroundImage,
+      backgroundImageAlt: slide.backgroundImageAlt,
+    }),
   );
+
+  return <HeroCarousel slides={slides} trustBar={homeContent.heroTrustBar} />;
 }
