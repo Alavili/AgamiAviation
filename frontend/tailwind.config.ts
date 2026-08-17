@@ -23,6 +23,15 @@ const config: Config = {
           black: "#000000",
         },
       },
+      keyframes: {
+        "navbar-in": {
+          from: { transform: "translateY(-100%)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        "navbar-in": "navbar-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
+      },
     },
   },
   plugins: [],

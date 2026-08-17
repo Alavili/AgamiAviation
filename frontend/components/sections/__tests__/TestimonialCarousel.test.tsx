@@ -23,9 +23,7 @@ describe("TestimonialCarousel", () => {
 
     expect(screen.getByText("Author 1")).toBeInTheDocument();
     expect(screen.getByText("Author 3")).toBeInTheDocument();
-    expect(
-      screen.queryByLabelText("Next testimonial"),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Next testimonial")).not.toBeInTheDocument();
   });
 
   it("advances the visible window and wraps around on next", () => {
