@@ -138,84 +138,59 @@ export function TestimonialCarousel({ content }: TestimonialCarouselProps) {
         {Math.min(activeIndex + VISIBLE_COUNT, total)} of {total}
       </p>
 
-      <div ref={trackRef} className="mt-10 flex gap-6 overflow-hidden">
-        {trackItems.map((item, index) => {
-          const trueIndex = index % total;
-          return (
-            <div
-              key={`${item.author}-${index}`}
-              className="basis-full shrink-0 sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)]"
-            >
-              <TestimonialCard
-                item={item}
-                isFeatured={trueIndex === activeIndex}
+      <div ref={trackRef} className="mt-10 flex overflow-hidden">
+        {trackItems.map((item, index) => (
+          <div
+            key={`${item.author}-${index}`}
+            className="relative basis-full shrink-0 pl-6 pr-8 first:pl-0 sm:basis-[calc(100%/2)] lg:basis-[calc(100%/3)]"
+          >
+            {index !== 0 && (
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 left-0 w-px"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(to bottom, #C4CBD4 0, #C4CBD4 14px, transparent 14px, transparent 24px)",
+                }}
               />
-            </div>
-          );
-        })}
+            )}
+            <TestimonialCard item={item} />
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-// A soft pastel wash (not a saturated fill) — keeps the featured card
-// readable with dark text, distinguished from the plain white cards by
-// warmth and a colored border rather than by inverting to white-on-dark.
-const FEATURED_CARD_GRADIENT =
-  "linear-gradient(135deg, #FFE7C7 0%, #FFF8F0 100%)";
-
 function TestimonialCard({
   item,
-  isFeatured,
 }: {
   item: HomeContent["testimonials"]["items"][number];
-  isFeatured: boolean;
 }) {
   return (
-    <div
-      className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-8 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 ${
-        isFeatured
-          ? "border border-orange-100 shadow-[0_20px_45px_-30px_rgba(250,145,28,0.55)] hover:shadow-[0_25px_50px_-30px_rgba(250,145,28,0.65)]"
-          : "border border-gray-100 bg-white shadow-[0_15px_35px_-25px_rgba(8,20,35,0.25)] hover:shadow-[0_25px_45px_-25px_rgba(8,20,35,0.35)]"
-      }`}
-      style={isFeatured ? { background: FEATURED_CARD_GRADIENT } : undefined}
-    >
-      {/* Oversized watermark quote mark, cropped by the card's own edge —
-          purely decorative texture behind the copy, not a UI element. */}
-      <QuoteIcon
-        aria-hidden
-        className={`pointer-events-none absolute -right-2 -top-2 h-24 w-24 ${
-          isFeatured ? "text-orange-200/50" : "text-gray-50"
-        }`}
-      />
-
-      <div className="relative flex items-center">
-        <span className="h-1.5 w-10 shrink-0 rounded-full bg-brand-orange" />
-      </div>
-
-      <p className="relative mt-5 text-lg font-medium leading-relaxed text-gray-800">
-        &ldquo;{item.quote}&rdquo;
-      </p>
-
-      <div
-        className={`relative mt-auto flex items-center gap-3 border-t pt-6 ${
-          isFeatured ? "border-orange-200/60" : "border-gray-100"
-        }`}
-      >
-        <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-sm">
+    <div className="flex h-full flex-col">
+      <div className="flex items-start">
+        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
           <Image
             src={item.avatar}
             alt={item.avatarAlt}
             fill
-            sizes="44px"
+            sizes="64px"
             className="object-cover"
           />
         </div>
-        <div className="min-w-0">
-          <p className="truncate font-bold text-gray-900">{item.author}</p>
-          <p className="truncate text-sm text-gray-500">{item.role}</p>
-        </div>
+        <QuoteIcon
+          aria-hidden
+          className="ml-auto h-12 w-12 shrink-0 text-brand-orange"
+        />
       </div>
+
+      <p className="mt-5 font-bold text-gray-900">{item.author}</p>
+      <p className="text-sm text-gray-500">{item.role}</p>
+
+      <p className="mt-5 leading-relaxed text-gray-600">
+        &ldquo;{item.quote}&rdquo;
+      </p>
     </div>
   );
 }
