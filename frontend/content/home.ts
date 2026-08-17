@@ -10,6 +10,7 @@ export interface HeroSlide {
 export interface TrustLogo {
   name: string;
   src: string;
+  className?: string; // overrides the default logo size, e.g. for wider wordmarks
 }
 
 export interface HomeContent {
@@ -122,13 +123,21 @@ export const homeContent: HomeContent = {
     },
   ],
   heroTrustBar: [
-    { name: "Emirates", src: "/images/trust-logos/emirates.svg" }, // PENDING_CLIENT_CONTENT
-    { name: "Etihad Airways", src: "/images/trust-logos/etihad.svg" }, // PENDING_CLIENT_CONTENT
-    { name: "Qatar Airways", src: "/images/trust-logos/qatar-airways.svg" }, // PENDING_CLIENT_CONTENT
-    { name: "Lufthansa", src: "/images/trust-logos/lufthansa.svg" }, // PENDING_CLIENT_CONTENT
     {
-      name: "Singapore Airlines",
-      src: "/images/trust-logos/singapore-airlines.svg",
+      name: "Wandering Bear Coffee",
+      src: "/images/trust-logos/wandering-bear-coffee.png",
+    }, // PENDING_CLIENT_CONTENT
+    { name: "Gorjana", src: "/images/trust-logos/gorjana.png" }, // PENDING_CLIENT_CONTENT
+    {
+      name: "Vénus et Fleur",
+      src: "/images/trust-logos/venus-et-fleur.png",
+      className: "h-4 w-auto object-contain opacity-90 sm:h-5",
+    }, // PENDING_CLIENT_CONTENT
+    { name: "Obvi", src: "/images/trust-logos/obvi.png" }, // PENDING_CLIENT_CONTENT
+    { name: "Lomi", src: "/images/trust-logos/lomi.png" }, // PENDING_CLIENT_CONTENT
+    {
+      name: "Bubs Naturals",
+      src: "/images/trust-logos/bubs-naturals.png",
     }, // PENDING_CLIENT_CONTENT
   ],
   aboutTeaser: {
@@ -156,43 +165,44 @@ export const homeContent: HomeContent = {
   ],
   solutionShowcase: {
     heading: "Our Solution", // PENDING_CLIENT_CONTENT
-    subhead: "Lorem ipsum dolor sit amet Lorem ipsum.", // PENDING_CLIENT_CONTENT — Figma itself uses lorem ipsum here, real copy not yet provided
+    subhead:
+      "Integrated ground support systems engineered around the aircraft.", // PENDING_CLIENT_CONTENT — grounded in the real scope from content/solutions.ts, exact marketing copy TBD
     items: [
       {
-        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        title: "Integrated GSU Systems", // PENDING_CLIENT_CONTENT
         description:
-          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+          "PCA, GPU, potable water, sewage, and blue water — one integrated ground support system built around the aircraft.", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
-        href: "/solutions",
+          "https://images.unsplash.com/photo-1769273747778-74eeb3f6d551?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support equipment on an airport tarmac", // PENDING_CLIENT_CONTENT
+        href: "/solutions#gsu-system",
       },
       {
-        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        title: "Aircraft Docking & Handling", // PENDING_CLIENT_CONTENT
         description:
-          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+          "Custom docking and maintenance platforms engineered around your aircraft type, with full engine handling support.", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
-        href: "/solutions",
+          "https://images.unsplash.com/photo-1542296332-2e4473faf563?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground crew and tugs preparing an aircraft for pushback", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
       {
-        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        title: "Fume Extraction Systems", // PENDING_CLIENT_CONTENT
         description:
-          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+          "Purpose-built extraction systems that keep hangars and ramps compliant during maintenance and engine runs.", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
-        href: "/solutions",
+          "https://images.unsplash.com/photo-1594973841081-ec0c9c7e3064?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground crew technician inspecting equipment on the tarmac", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
       {
-        title: "Lorem Ipsum is simply", // PENDING_CLIENT_CONTENT
+        title: "Airside Systems Integration", // PENDING_CLIENT_CONTENT
         description:
-          "Ornare non nulla faucibus pulvinar vulputate neque. At Suscipit tristique nam enim mauris consectetur.", // PENDING_CLIENT_CONTENT
+          "End-to-end design, engineering, and integration of airside systems — from concept through commissioning.", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
-        href: "/solutions",
+          "https://images.unsplash.com/photo-1571086291540-b137111fa1c7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support carts and tugs beside a wide-body aircraft", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
     ],
   },
@@ -202,89 +212,117 @@ export const homeContent: HomeContent = {
   },
   portfolio: {
     heading: "Portfolio", // PENDING_CLIENT_CONTENT
-    subhead: "Lorem ipsum dolor sit amet Lorem ipsum.", // PENDING_CLIENT_CONTENT — Figma itself uses lorem ipsum here, real copy not yet provided
+    subhead:
+      "Ground support systems we've designed, built, and installed — across ramps, hangars, and gates.", // PENDING_CLIENT_CONTENT — grounded in the real scope from content/solutions.ts, exact marketing copy TBD
     items: [
       {
-        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
-        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        eyebrow: "Airside Systems Integration", // PENDING_CLIENT_CONTENT
+        title: "Apron Power & Utilities Upgrade", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
-        href: "/portfolio",
+          "https://images.unsplash.com/photo-1466691623998-d607fab1ca29?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt:
+          "Aerial view of an airport apron with aircraft parked at multiple gates", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
       {
-        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
-        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        eyebrow: "Integrated GSU System", // PENDING_CLIENT_CONTENT
+        title: "Multi-Gate GSU Rollout", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
-        href: "/portfolio",
+          "https://images.unsplash.com/photo-1769273747778-74eeb3f6d551?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support equipment on an airport tarmac", // PENDING_CLIENT_CONTENT
+        href: "/solutions#gsu-system",
       },
       {
-        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
-        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        eyebrow: "Aircraft Docking & Handling", // PENDING_CLIENT_CONTENT
+        title: "Docking & Pushback System", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
-        href: "/portfolio",
+          "https://images.unsplash.com/photo-1542296332-2e4473faf563?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground crew and tugs preparing an aircraft for pushback", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
       {
-        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
-        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        eyebrow: "Fume Extraction", // PENDING_CLIENT_CONTENT
+        title: "Fume Extraction Retrofit", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
-        href: "/portfolio",
+          "https://images.unsplash.com/photo-1594973841081-ec0c9c7e3064?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground crew technician inspecting equipment on the tarmac", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
       {
-        eyebrow: "Lorem Ipsum", // PENDING_CLIENT_CONTENT
-        title: "Lorem Ipsum is simply Dummy Text", // PENDING_CLIENT_CONTENT
+        eyebrow: "Ground Power", // PENDING_CLIENT_CONTENT
+        title: "GPU Fleet Deployment", // PENDING_CLIENT_CONTENT
         image:
-          "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        imageAlt: "Aircraft docked at the terminal with ground support equipment", // PENDING_CLIENT_CONTENT
-        href: "/portfolio",
+          "https://images.unsplash.com/photo-1571086291540-b137111fa1c7?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support carts and tugs beside a wide-body aircraft", // PENDING_CLIENT_CONTENT
+        href: "/solutions#gsu-system",
+      },
+      {
+        eyebrow: "Maintenance Platforms", // PENDING_CLIENT_CONTENT
+        title: "Aerial Platform Installation", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support technician in coveralls and a hard hat", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
+      },
+      {
+        eyebrow: "Pre-Conditioned Air", // PENDING_CLIENT_CONTENT
+        title: "PCA Unit Fleet Expansion", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1769273747778-74eeb3f6d551?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt: "Ground support equipment on an airport tarmac", // PENDING_CLIENT_CONTENT
+        href: "/solutions#gsu-system",
+      },
+      {
+        eyebrow: "Water & Waste Servicing", // PENDING_CLIENT_CONTENT
+        title: "Potable Water & Sewage Cart Refresh", // PENDING_CLIENT_CONTENT
+        image:
+          "https://images.unsplash.com/photo-1542296332-2e4473faf563?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
+        imageAlt:
+          "Ground crew and tugs preparing an aircraft for pushback at sunset", // PENDING_CLIENT_CONTENT
+        href: "/solutions#scope-of-services",
       },
     ],
   },
   testimonials: {
     heading: "Testimonials", // PENDING_CLIENT_CONTENT
-    subhead: "Lorem ipsum dolor sit amet Lorem ipsum.", // PENDING_CLIENT_CONTENT — Figma itself uses lorem ipsum here, real copy not yet provided
+    subhead:
+      "What ground operations and maintenance teams say about working with us.", // PENDING_CLIENT_CONTENT — grounded copy, exact client quotes TBD
     items: [
       {
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
-        author: "John Doe", // PENDING_CLIENT_CONTENT
-        role: "Our Customer", // PENDING_CLIENT_CONTENT
+          "Turnaround times dropped the moment we switched — their GPU and PCA units are ready the second an aircraft blocks in, and the crews know exactly what they're doing.", // PENDING_CLIENT_CONTENT
+        author: "Rahul Menon", // PENDING_CLIENT_CONTENT
+        role: "Ground Operations Manager", // PENDING_CLIENT_CONTENT
         avatar:
           "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of Rahul Menon", // PENDING_CLIENT_CONTENT
       },
       {
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
-        author: "John Doe", // PENDING_CLIENT_CONTENT
-        role: "Our Customer", // PENDING_CLIENT_CONTENT
+          "We hired the docking system for a single heavy-check cycle and ended up keeping it on contract — the fit and finish around the airframe was better than equipment we'd bought outright.", // PENDING_CLIENT_CONTENT
+        author: "Daniel Voss", // PENDING_CLIENT_CONTENT
+        role: "MRO Facility Director", // PENDING_CLIENT_CONTENT
         avatar:
           "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of Daniel Voss", // PENDING_CLIENT_CONTENT
       },
       {
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
-        author: "John Doe", // PENDING_CLIENT_CONTENT
-        role: "Our Customer", // PENDING_CLIENT_CONTENT
+          "When a GPU went down at 2am, their team had a replacement unit on the ramp before the first departure. That kind of response is rare from an equipment supplier.", // PENDING_CLIENT_CONTENT
+        author: "Peter Whitfield", // PENDING_CLIENT_CONTENT
+        role: "Fleet Maintenance Lead", // PENDING_CLIENT_CONTENT
         avatar:
           "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of Peter Whitfield", // PENDING_CLIENT_CONTENT
       },
       {
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis quam non leo varius bibendum id tristique turpis", // PENDING_CLIENT_CONTENT
-        author: "John Doe", // PENDING_CLIENT_CONTENT
-        role: "Our Customer", // PENDING_CLIENT_CONTENT
+          "From RFQ to install on our apron took under three weeks. Everything was engineered to our gate layout instead of us adapting to a catalog part.", // PENDING_CLIENT_CONTENT
+        author: "Sarah Kavanagh", // PENDING_CLIENT_CONTENT
+        role: "Airport Operations Manager", // PENDING_CLIENT_CONTENT
         avatar:
           "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // PENDING_CLIENT_CONTENT
-        avatarAlt: "Portrait of John Doe", // PENDING_CLIENT_CONTENT
+        avatarAlt: "Portrait of Sarah Kavanagh", // PENDING_CLIENT_CONTENT
       },
     ],
   },

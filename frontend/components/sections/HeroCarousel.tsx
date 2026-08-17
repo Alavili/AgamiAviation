@@ -140,7 +140,7 @@ export function HeroCarousel({
           </button>
 
           <div
-            className={`absolute inset-x-0 z-20 flex items-center justify-center gap-3 ${
+            className={`absolute inset-x-0 z-20 flex items-center justify-center gap-1.5 ${
               trustBar && trustBar.length > 0 ? "bottom-24" : "bottom-8"
             }`}
           >
@@ -151,10 +151,10 @@ export function HeroCarousel({
                 onClick={() => goTo(slideIndex)}
                 aria-label={`Go to slide ${slideIndex + 1}`}
                 aria-current={slideIndex === index}
-                className={`h-2.5 w-2.5 rounded-full transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange ${
+                className={`h-2.5 rounded-full transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange ${
                   slideIndex === index
-                    ? "bg-brand-orange"
-                    : "bg-white/50 hover:bg-white/80"
+                    ? "w-6 bg-white"
+                    : "w-2.5 border border-white/80 bg-transparent hover:bg-white/30"
                 }`}
               />
             ))}
